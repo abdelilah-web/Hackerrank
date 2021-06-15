@@ -66,3 +66,30 @@ def plusMinus(arr):
     print(round((n/num),6))
     print(round((z/num),6))
     # round is for numbers after the comma
+
+
+#Staircase
+def staircase(n):
+    for stair in range(1, n+1):
+        n -= 1
+        print(' '*n + '#'*stair)
+
+
+#Mini-Max Sum
+def miniMaxSum(arr):
+    # Write your code here
+    smaller = bigger = arr[0]
+    minimum = 0
+    maximum = 0
+    for number in arr:
+        if number < smaller:
+            smaller = number
+        if number > bigger:
+            bigger = number   
+        minimum += number 
+        maximum += number  
+          
+    minimum = minimum - bigger
+    maximum = maximum - smaller
+    print(minimum, maximum )
+        
