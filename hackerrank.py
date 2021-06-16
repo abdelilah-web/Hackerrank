@@ -92,4 +92,18 @@ def miniMaxSum(arr):
     minimum = minimum - bigger
     maximum = maximum - smaller
     print(minimum, maximum )
+
+
+
+#Birthday Cake Candles
+def birthdayCakeCandles(candles):
+    height = 0
+    unit = 1
+    for number in candles:
+        if number >= height:
+            if number == height:
+                unit += 1
+            height = number
         
+    return unit   
+            
