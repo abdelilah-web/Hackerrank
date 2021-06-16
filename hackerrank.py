@@ -107,3 +107,18 @@ def birthdayCakeCandles(candles):
         
     return unit   
             
+
+#Grading Students
+def gradingStudents(grades):
+    list_grades = []
+    for grade in grades:
+        if grade < 38:
+            list_grades.append(grade)
+        if 38 <= grade < 100:
+            if (grade +1)% 5 == 0:
+                list_grades.append(grade+1)
+            if (grade +2)% 5 == 0:
+                list_grades.append(grade+2)
+            else :
+                list_grades.append(grade)
+    return list_grades
