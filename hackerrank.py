@@ -122,3 +122,22 @@ def gradingStudents(grades):
             else :
                 list_grades.append(grade)
     return list_grades
+
+
+#Apple and Orange
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    number_apples = 0
+    number_oranges = 0
+    for apple in apples:
+        pos_apple = a + apple
+        if s <= pos_apple <= t:
+            number_apples += 1
+            
+    for orange in oranges:
+        pos_orange = b + orange
+        if s <= pos_orange <= t:
+            number_oranges += 1    
+    
+    print(number_apples)
+    print(number_oranges)
+    
