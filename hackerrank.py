@@ -124,19 +124,6 @@ def gradingStudents(grades):
     return list_grades
 
 
-#Number Line Jumps
-def kangaroo(x1, v1, x2, v2):
-    # Write your code here
-    if x2> x1 and v2>= v1:
-        return 'NO'    
-    
-    elif (x1-x2) % (v2-v1) == 0:
-        return 'YES'
-
-    else:
-        return 'NO'
-
-
 #Apple and Orange
 def countApplesAndOranges(s, t, a, b, apples, oranges):
     number_apples = 0
@@ -154,3 +141,25 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
     print(number_apples)
     print(number_oranges)
     
+
+#Number Line Jumps
+def kangaroo(x1, v1, x2, v2):
+    # Write your code here
+    if x2> x1 and v2>= v1:
+        return 'NO'    
+    elif (x1-x2) % (v2-v1) == 0:
+        return 'YES'
+    else:
+        return 'NO'
+
+
+#Between Two Sets
+def getTotalX(a, b):
+    maxA = max(a)
+    minB = min(b)
+    count = 0
+    for i in range(maxA, minB+1):
+        if all([i%x==0 for x in a]):
+            if all([y%i==0 for y in b]):
+                count += 1
+    return count 
