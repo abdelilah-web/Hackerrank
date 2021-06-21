@@ -163,3 +163,25 @@ def getTotalX(a, b):
             if all([y%i==0 for y in b]):
                 count += 1
     return count 
+
+
+#Time Conversion
+def timeConversion(s):
+    hour = int(s[:2])
+    h24 = 12
+    if s[-2]=='P':
+        if s[:2]=='12':
+            return s[:-2]
+        for h in range(1,hour+1):
+            h24 += 1
+            if h == hour:
+                STR = str(h24),':',s[3:-2]
+                big_str = ''.join(STR)
+                return big_str
+    elif s[-2]=='A':
+        if s[:2]=='12':
+            STR = '00',s[2:-2]
+            big_str = ''.join(STR)
+            return big_str
+        else:
+            return s[:-2]
