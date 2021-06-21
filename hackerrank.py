@@ -185,3 +185,19 @@ def timeConversion(s):
             return big_str
         else:
             return s[:-2]
+
+
+#Breaking the Records
+def breakingRecords(scores):
+    H_score = scores[0]
+    L_score = scores[0]
+    N_H_score = 0
+    N_L_score = 0
+    for score in scores:
+        if score > H_score:
+            H_score = score
+            N_H_score += 1
+        elif score < L_score:
+            L_score = score
+            N_L_score += 1
+    return str(N_H_score),str(N_L_score)  
