@@ -200,4 +200,22 @@ def breakingRecords(scores):
         elif score < L_score:
             L_score = score
             N_L_score += 1
-    return str(N_H_score),str(N_L_score)  
+    return str(N_H_score),str(N_L_score)
+
+
+#Subarray Division
+def birthday(s, d, m):
+    square = 0
+    try:
+         
+        for n in range(len(s)):
+            k = 0
+            for x in range(1,m+1):
+                k += s[n]
+                n += 1
+                if k == d and x == m :
+                    square += 1
+            
+    except:
+        pass            
+    return square    
