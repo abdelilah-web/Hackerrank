@@ -206,16 +206,26 @@ def breakingRecords(scores):
 #Subarray Division
 def birthday(s, d, m):
     square = 0
-    try:
-         
+    try:        
         for n in range(len(s)):
             k = 0
             for x in range(1,m+1):
                 k += s[n]
                 n += 1
                 if k == d and x == m :
-                    square += 1
-            
+                    square += 1          
     except:
         pass            
-    return square    
+    return square 
+
+
+#Divisible Sum Pairs
+def divisibleSumPairs(n, k, ar):
+    pairs=0
+    for i in range(len(ar)):
+        number_1 = ar[i]
+        for j in range(len(ar)):
+            number_2 = ar[j]
+            if i<j and (number_1+number_2)%k ==0:
+                pairs +=1            
+    return pairs   
