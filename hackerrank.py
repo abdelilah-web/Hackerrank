@@ -228,4 +228,16 @@ def divisibleSumPairs(n, k, ar):
             number_2 = ar[j]
             if i<j and (number_1+number_2)%k ==0:
                 pairs +=1            
-    return pairs   
+    return pairs  
+
+
+#Migratory Birds
+def migratoryBirds(arr):
+    Dic = {}
+    for x in range(max(arr)+1):
+        z = 0
+        for y in arr:
+            if x==y :
+                z += 1
+                Dic[x]= z
+    return max(Dic, key=Dic.get)  
