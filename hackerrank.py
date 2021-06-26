@@ -255,5 +255,13 @@ def dayOfProgrammer(year):
 
 #Bill Division
 def bonAppetit(bill, k, b):
-    anna = (sum(bill)-bill[k])/2
-    print('Bon Appetit') if anna == b else print(int(b-anna))
+    anna_part = (sum(bill)-bill[k])/2
+    print('Bon Appetit') if anna_part == b else print(int(b-anna_part))
+
+
+#Reverse Word and Swap Cases
+def reverse_words_order_and_swap_cases(sentence):
+    sentence_list = sentence.split()
+    reversed_list = sentence_list[:: -1]
+    reversed_sentence = " ".join(reversed_list)
+    return reversed_sentence.swapcase()
