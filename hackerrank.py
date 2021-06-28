@@ -282,3 +282,27 @@ def sockMerchant(n, ar):
         except:
             pass
     return pairs
+
+
+#Drawing Book
+def pageCount(n, p):
+    book =[]
+    number_pages1 = 0
+    number_pages2 = 0
+    for x in range(1,n+1):
+        if x%2 ==0:
+            book.append('page')
+        book.append(x)
+    for y in book:
+        if y=='page':
+            number_pages1+=1
+        elif y==p:
+            break
+    reverse_book = book[::-1]
+    for z in reverse_book:
+        if z =='page':
+            number_pages2 += 1
+        elif z == p:
+            break
+    minimum = min(number_pages1,number_pages2)
+    return minimum
