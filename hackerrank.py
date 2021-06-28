@@ -265,3 +265,20 @@ def reverse_words_order_and_swap_cases(sentence):
     reversed_list = sentence_list[:: -1]
     reversed_sentence = " ".join(reversed_list)
     return reversed_sentence.swapcase()
+
+
+#Sales by Match
+def sockMerchant(n, ar):
+    pairs = 0
+    ar_sorted = sorted(ar)
+    for a in range(len(ar)):
+        try :
+            if ar_sorted[0]==ar_sorted[1]:
+                ar_sorted.remove(ar_sorted[1])
+                ar_sorted.remove(ar_sorted[0])  
+                pairs += 1
+            else :
+                ar_sorted.remove(ar_sorted[0])
+        except:
+            pass
+    return pairs
