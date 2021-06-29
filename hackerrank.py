@@ -319,3 +319,16 @@ def countingValleys(steps, path):
         if step == 'U' and sealevel == 0:
             valey +=1
     return valey
+
+
+#Electronics Shop
+def getMoneySpent(keyboards, drives, b):
+    l = []
+    for x in keyboards:
+        for y in drives:
+            if x+y <= b:
+                l.append(x+y)
+    if not l:
+        return -1
+    else:
+        return max(l)
