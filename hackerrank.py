@@ -306,3 +306,16 @@ def pageCount(n, p):
             break
     minimum = min(number_pages1,number_pages2)
     return minimum
+
+
+#Counting Valleys
+def countingValleys(steps, path):
+    sealevel = valey = 0
+    for step in path:
+        if step == 'U':
+            sealevel += 1
+        else :
+            sealevel -= 1
+        if step == 'U' and sealevel == 0:
+            valey +=1
+    return valey
