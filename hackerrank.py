@@ -332,3 +332,13 @@ def getMoneySpent(keyboards, drives, b):
         return -1
     else:
         return max(l)
+
+
+#Cats and a Mouse
+def catAndMouse(x, y, z):
+    if abs(x-z)<abs(y-z):
+        return 'Cat A'
+    if abs(x-z)>abs(y-z):
+        return 'Cat B'
+    if abs(x-z)==abs(y-z):
+        return 'Mouse C' 
