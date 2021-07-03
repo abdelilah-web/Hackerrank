@@ -364,5 +364,17 @@ def formingMagicSquare(s):
             a += abs(i-j)
         if a<count :
             count = a
-    return count        
+    return count       
+
+
+#Picking Numbers
+def pickingNumbers(a):
+    total_count = []
+    for number in a:
+        count = 0
+        for number_1 in a:
+            if number-number_1 == 1 or number-number_1 == 0:
+                count+=1
+        total_count.append(count)
+    return max(total_count) 
             
