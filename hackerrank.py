@@ -377,4 +377,12 @@ def pickingNumbers(a):
                 count+=1
         total_count.append(count)
     return max(total_count) 
+
+
+#The Hurdle Race
+def hurdleRace(k, height):
+    if max(height)>k:
+        return max(height)-k
+    else:
+        return 0
             
