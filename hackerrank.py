@@ -386,3 +386,15 @@ def hurdleRace(k, height):
     else:
         return 0
             
+
+#Designer PDF Viewer
+def designerPdfViewer(h, word):
+    a_z = 'abcdefghijklmnopqrstuvwxyz'
+    count = 0
+    L = []
+    for letter in word:
+        L.append(a_z.index(letter))
+    for indx in L:
+        if h[indx]>count:
+            count = h[indx]  
+    return count*len(word)
