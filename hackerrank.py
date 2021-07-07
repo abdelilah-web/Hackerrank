@@ -409,3 +409,15 @@ def utopianTree(n):
         else:
             height *= 2
     return height
+
+
+#Angry Professor
+def angryProfessor(k, a):
+    count = 0
+    for i in a :
+        if i<=0 :
+            count += 1
+    if k>count:
+        return 'YES' 
+    else:
+        return 'NO'
