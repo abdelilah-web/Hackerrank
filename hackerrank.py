@@ -398,3 +398,14 @@ def designerPdfViewer(h, word):
         if h[indx]>count:
             count = h[indx]  
     return count*len(word)
+
+
+#Utopian Tree
+def utopianTree(n):
+    height = 1
+    for period in range(n):  
+        if height % 2 ==0:
+            height += 1
+        else:
+            height *= 2
+    return height
