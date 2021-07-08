@@ -421,3 +421,23 @@ def angryProfessor(k, a):
         return 'YES' 
     else:
         return 'NO'
+
+
+#Angry Professor(using lambda_map_sum)
+def angryProfessor(k, a):
+    return 'YES' if sum(map(lambda x: x <= 0, a)) < k else 'NO'
+
+
+#Angry Professor(using lambda_filter)
+def angryProfessor(k, a):
+    return "NO" if len(list(filter(lambda x: x<=0, a))) >= k else "YES"
+
+
+#Beautiful Days at the Movies
+def beautifulDays(i, j, k):
+    count = 0
+    for number in range(i,j+1):
+        reverse_number = str(number)[::-1]
+        if abs(number-int(reverse_number))%k==0:
+            count +=1
+    return count
