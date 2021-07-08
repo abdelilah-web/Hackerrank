@@ -436,8 +436,23 @@ def angryProfessor(k, a):
 #Beautiful Days at the Movies
 def beautifulDays(i, j, k):
     count = 0
-    for number in range(i,j+1):
-        reverse_number = str(number)[::-1]
-        if abs(number-int(reverse_number))%k==0:
+    for day in range(i,j+1):
+        if abs(day-int(str(day)[::-1]))%k==0:
             count +=1
+    return count
+
+
+##Beautiful Days at the Movies '2'
+def beautifulDays(i, j, k):
+    return sum([5 for day in range(i,j+1) if abs(day-int(str(day)[::-1]))%k==0 ])
+
+
+#Viral Advertising
+def viralAdvertising(n):
+    count = 2
+    var = 2
+    for i in range(2,n+1):
+        day = var*3
+        var = day//2
+        count += var 
     return count
