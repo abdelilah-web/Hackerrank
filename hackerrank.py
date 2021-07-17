@@ -456,3 +456,44 @@ def viralAdvertising(n):
         var = day//2
         count += var 
     return count
+
+
+#Climbing the Leaderboard -1- 
+def climbingLeaderboard(ranked, player):
+    L = []
+    for game in player:
+        ranked.append(game)
+        ranked = sorted(ranked, reverse = True)
+        rank = {max(ranked):1}
+        number = 1
+        for i in range(1,len(ranked)):
+            if ranked[i] != ranked[i-1]:
+                number +=1
+            rank[ranked[i]] = number
+        L.append(rank.get(game))
+    return L
+
+
+#Climbing the Leaderboard -2- 
+def climbingLeaderboard(ranked, player):
+      rank = list(set(ranked))
+      rank.sort()
+      player.sort()
+      resp = list()
+      x = len(rank)+1
+      for item in player:
+           resp.append(x - bisect.bisect(rank, item))
+      return resp
+
+
+#Save the Prisoner!
+def saveThePrisoner(n, m, s):
+    result = s+m-1   
+    if result > n :
+        if result %n ==0:
+            return n
+        else:
+            a = result //n
+            b = a*n
+            result -= b  
+    return result
