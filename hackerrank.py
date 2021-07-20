@@ -506,3 +506,20 @@ def circularArrayRotation(a, k, queries):
     k = len(a) - k
     a = a[k:] + a[:k]
     return [a[i] for i in queries] 
+
+
+#Sequence Equation
+def permutationEquation(p):
+    p = [0]+p
+    L = list()
+    number = 1
+    for _ in p:
+        for indx in range(len(p)):
+            try :
+                if p[p[indx]] == number:
+                    L.append(indx)
+                    number +=1
+            except:
+                pass   
+    return L     
+    
