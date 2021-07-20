@@ -497,3 +497,12 @@ def saveThePrisoner(n, m, s):
             b = a*n
             result -= b  
     return result
+
+
+#Circular Array Rotation
+def circularArrayRotation(a, k, queries):
+    if k > len(a):
+        k = k % len(a)
+    k = len(a) - k
+    a = a[k:] + a[:k]
+    return [a[i] for i in queries] 
