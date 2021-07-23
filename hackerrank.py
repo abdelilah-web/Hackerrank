@@ -521,5 +521,19 @@ def permutationEquation(p):
                     number +=1
             except:
                 pass   
-    return L     
+    return L    
+
+
+#Find Digits
+def findDigits(n):
+    n = str(n)
+    count = 0
+    for i in n:
+        i = int(i)
+        n = int(n)
+        if i == 0:
+            pass
+        elif n%i==0:
+            count +=1
+    return count 
     
