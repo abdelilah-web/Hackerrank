@@ -536,4 +536,6 @@ def findDigits(n):
         elif n%i==0:
             count +=1
     return count 
-    
+#2
+def findDigits(n):
+    return sum([1 for i in str(n) if int(i) !=0 and n%int(i)==0])
