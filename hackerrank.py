@@ -539,3 +539,34 @@ def findDigits(n):
 #2
 def findDigits(n):
     return sum([1 for i in str(n) if int(i) !=0 and n%int(i)==0])
+
+
+#Append and Delete
+def appendAndDelete(s, t, k):
+    s_length = len(s)
+    t_length = len(t)
+    if s_length + t_length < k: return 'Yes'
+    same = 0
+    for s_l, t_l in zip(s, t):
+        if s_l == t_l: same += 1
+        else: break 
+    extra_s = s_length - same
+    extra_t = t_length - same
+    difference = extra_s + extra_t
+    if difference <= k and difference % 2 == k % 2: return 'Yes'
+    return 'No'
+
+
+#Sherlock and Squares
+def squares(a, b):
+    number_of_square = 0
+    for n in range(a,b+1):
+        square_n = math.sqrt(n)
+        if int(square_n)**2 == n:
+            number_of_square = 1
+            break 
+    square_n += 1
+    while int(square_n)**2 <= b:
+        number_of_square += 1
+        square_n += 1
+    return number_of_square
