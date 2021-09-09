@@ -570,3 +570,18 @@ def squares(a, b):
         number_of_square += 1
         square_n += 1
     return number_of_square
+
+
+#Library Fine
+def libraryFine(d1, m1, y1, d2, m2, y2):
+    if y2 == y1:
+        if m1 > m2: 
+            return 500* (m1-m2)
+        elif m1 == m2:
+            if d1 <= d2:
+                return 0
+            else: 
+                return 15* (d1-d2)
+        else : return 0
+    elif y1<y2: return 0
+    else : return 10000 
