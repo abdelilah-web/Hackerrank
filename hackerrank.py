@@ -585,3 +585,15 @@ def libraryFine(d1, m1, y1, d2, m2, y2):
         else : return 0
     elif y1<y2: return 0
     else : return 10000 
+
+
+#Cut the sticks
+def cutTheSticks(arr):
+    result = [len(arr)]
+    while True:                 
+        arr = [x for x in arr if x != min(arr)] 
+        
+        if len(arr)==0:
+            break
+        result.append(len(arr))
+    return result
