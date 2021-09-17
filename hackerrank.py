@@ -611,3 +611,18 @@ def nonDivisibleSubset(k, s):
     if k % 2 == 0: 
         count += 1
     return count
+
+
+#Repeated String
+def repeatedString(s, n):
+    only_a = list(set(s))
+    if len(only_a)==1 and only_a[0]=='a':
+        return n
+    counts = s.count('a')
+    copy = n//len(s)
+    remainders = n%len(s)
+    remainders_a = s[:remainders]
+
+    counts *= copy 
+    counts += remainders_a.count('a')
+    return counts
