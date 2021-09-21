@@ -626,3 +626,22 @@ def repeatedString(s, n):
     counts *= copy 
     counts += remainders_a.count('a')
     return counts
+
+
+#Jumping on the Clouds
+def jumpingOnClouds(c):
+    count = 0
+    cloud = 0
+    for x in range(len(c)+1):
+        cloud += 2
+        if cloud >= len(c) :
+            try :
+                c[cloud-1]
+                count +=1
+                break
+            except:
+                break
+        if c[cloud]==1:
+            cloud -= 1
+        count +=1
+    return count
