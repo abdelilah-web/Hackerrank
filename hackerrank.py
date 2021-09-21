@@ -645,3 +645,10 @@ def jumpingOnClouds(c):
             cloud -= 1
         count +=1
     return count
+
+
+#Equalize the Array
+def equalizeArray(arr):
+    equal_value = max(set(arr), key=arr.count)
+    other_value = len(arr)-arr.count(equal_value)
+    return other_value
