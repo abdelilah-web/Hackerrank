@@ -652,3 +652,39 @@ def equalizeArray(arr):
     equal_value = max(set(arr), key=arr.count)
     other_value = len(arr)-arr.count(equal_value)
     return other_value
+
+
+#Queen's Attack II
+def queensAttack(n, k, r_q, c_q, obstacles):
+    up = n- r_q
+    right = n- c_q
+    down = r_q -1
+    left = c_q - 1
+    up_right = min(up,right)
+    down_right = min(right,down)
+    down_left = min(down,left)
+    up_left = min(left,up)
+
+    for o in obstacles:
+        if o[0] == r_q:
+            if o[1]>c_q:
+                right = min(right,o[1]-c_q-1)
+            elif o[1]<c_q:
+                left = min(left,c_q-o[1]-1)
+        elif o[1] == c_q:
+            if o[0]>r_q:
+                up = min(up,o[0]-r_q-1)
+            elif o[0]<r_q:
+                down = min(down,r_q-o[0]-1)       
+        elif abs(o[0]-r_q) == abs(o[1]-c_q) :
+            if o[0] > r_q:
+                if o[1]<c_q:
+                    up_left = min(up_left,o[0]-r_q-1) 
+                elif o[1]>c_q:
+                    up_right = min(up_right, o[0]-r_q-1)
+            elif o[0]< r_q:
+                if o[1]<c_q:
+                    down_left = min(down_left, r_q-o[0]-1)
+                elif o[1]>c_q:
+                    down_right = min(down_right, r_q-o[0]-1)
+    return up+right+down+left+up_right+down_right+down_left+up_left
