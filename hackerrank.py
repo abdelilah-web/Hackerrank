@@ -688,3 +688,10 @@ def queensAttack(n, k, r_q, c_q, obstacles):
                 elif o[1]>c_q:
                     down_right = min(down_right, r_q-o[0]-1)
     return up+right+down+left+up_right+down_right+down_left+up_left
+
+
+#Organizing Containers of Balls
+def organizingContainers(container):
+    r = sorted([sum(x) for x in container])
+    c = sorted([sum(x) for x in zip(*container)])
+    return "Possible" if r == c else "Impossible"
