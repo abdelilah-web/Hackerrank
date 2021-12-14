@@ -695,3 +695,28 @@ def organizingContainers(container):
     r = sorted([sum(x) for x in container])
     c = sorted([sum(x) for x in zip(*container)])
     return "Possible" if r == c else "Impossible"
+
+
+#Encryption
+def encryption(s):
+    s= s.replace(' ','')
+    sqrt = math.sqrt(len(s))
+    if sqrt.is_integer() == True:
+        column = int(sqrt)
+    else :
+        column = int(sqrt)+1
+
+    ListbeforeEncryption = []
+    for i in range(0,len(s),column):
+        L = s[i:i+column]
+        ListbeforeEncryption += [L]
+
+    ListEncrypt = []
+    for zipped in zip_longest(*ListbeforeEncryption):
+        remove_None = list(filter(None, zipped))
+        JoinLettersInAWord = ''
+        JoinLettersInAWord = JoinLettersInAWord.join(remove_None)
+        ListEncrypt.append(JoinLettersInAWord)
+        
+    result = ' '.join(ListEncrypt)
+    return result
