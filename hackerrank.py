@@ -720,3 +720,24 @@ def encryption(s):
         
     result = ' '.join(ListEncrypt)
     return result
+
+
+#Bigger is Greater
+def biggerIsGreater(w):
+    org = w
+    w = list(w)
+    n = len(w)
+    zeta = n
+    for i in range(n-2,-1,-1):
+        j = [b for b in w[i+1:] if b>w[i]]
+        if len(j)!=0:
+            zeta=i
+            k = min(j)
+            myind = i+(w[i+1:].index(k))+1
+            w.insert(i,k)
+            del w[myind+1]
+            break
+    newstri = ''.join(w[:zeta+1]+sorted(w[zeta+1:n]))
+    if newstri==org:
+        newstri='no answer'
+    return newstri
