@@ -741,3 +741,26 @@ def biggerIsGreater(w):
     if newstri==org:
         newstri='no answer'
     return newstri
+
+#Modified Kaprekar Numbers
+def IsKaprekar(n):
+    square = str(n**2)
+    L_sqr = len(square)
+    try :
+        if n == 1:
+            return True 
+        elif 10**(L_sqr-1) == n:
+            return False
+        elif int(square[:L_sqr//2])+int(square[L_sqr//2:]) == n :
+            return True
+        else:
+            return False
+    except:
+        return False
+def kaprekarNumbers(p, q):
+    numbers = range(p,q+1)
+    result = list(filter(IsKaprekar,numbers ))
+    if len(result)==0:
+        print('INVALID RANGE')
+    else:
+        print(*result)
