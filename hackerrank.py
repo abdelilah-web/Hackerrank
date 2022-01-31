@@ -764,3 +764,11 @@ def kaprekarNumbers(p, q):
         print('INVALID RANGE')
     else:
         print(*result)
+
+#Beautiful Triplets
+def beautifulTriplets(d, arr):
+    count =0
+    for i in range(len(arr)):
+        if arr[i]+d in arr and arr[i]+2*d in arr:    
+            count+=1   
+    return count         
