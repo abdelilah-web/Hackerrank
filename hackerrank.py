@@ -771,4 +771,22 @@ def beautifulTriplets(d, arr):
     for i in range(len(arr)):
         if arr[i]+d in arr and arr[i]+2*d in arr:    
             count+=1   
-    return count         
+    return count   
+
+#Minimum Distances
+def minimumDistances(a):
+    duplicates = list({i for i in a if a.count(i) > 1})
+    if len(duplicates) == 0:
+        return -1
+    index = []
+    for n in range(len(duplicates)):
+        for i, x in enumerate(a):
+            if x == duplicates[n]:
+                index.append(i)
+            
+    difference = []          
+    for i in range(0,len(index),2):
+        deff = index[i+1] - index[i]
+        difference.append(abs(deff))
+    
+    return min(difference)      
